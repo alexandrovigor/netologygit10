@@ -25,15 +25,14 @@ public class SalesManager {
         return min;
     }
 
-    public int averageValue() {
+    public long averageValue() {
         int sum = 0;
         int i = -2;
         for (long sale : sales) {
-            if (sale != min() && sale != max())
-                sum += sale;
+            sum += sale;
             i++;
         }
-        return (sum / i);
+        return ((sum - min() - max())/ i);
     }
 }
 
